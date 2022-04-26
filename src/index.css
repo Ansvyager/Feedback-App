@@ -211,6 +211,9 @@ input:focus {
     margin: 10px 0;
 }
 
+
+
+
 @media (max-width: 600px) {
     .rating li {
         margin: 10px 3px;

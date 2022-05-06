@@ -10,24 +10,26 @@ function FeedbackList() {
     return <p>no feedback yet</p>;
   }
 
-return isLoading ? <Spinner/> : (
-<div className="feedback-list">
-      <AnimatePresence>
-        {feedback.map((item) => (
-          <motion.div
-            key={item.id}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <FeedBackItem item={item} key={item.id}>
-              {item}
-            </FeedBackItem>
-          </motion.div>
-        ))}
-      </AnimatePresence>
-    </div>
-)
+return isLoading ? (
+  <Spinner />
+) : (
+  <div className="feedback-list">
+    <AnimatePresence>
+      {feedback.map((item) => (
+        <motion.div
+          key={item.id}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <FeedBackItem item={item} key={item.id}>
+            {item}
+          </FeedBackItem>
+        </motion.div>
+      ))}
+    </AnimatePresence>
+  </div>
+);
 
 }
 
